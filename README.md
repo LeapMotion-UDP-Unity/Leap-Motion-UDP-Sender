@@ -18,6 +18,7 @@ npm node 等 必要コマンド
 ```
 npm i
 npm run app [送信先IPアドレス 省略時 127.0.0.1]
+npm run app 192.168.86.29
 
 ```
 
