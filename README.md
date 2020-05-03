@@ -23,10 +23,34 @@ npm run app 192.168.86.29
 ```
 
 
-# 仕様
+# 構成等の仕様
 LeapMotionコントローラーの設定 `Webアプリケーションを許可` をすると WebSocket サーバ起動するのでそれを利用している
 
 ![構成図1](./resource/dummy150x150.png)
+
+# 通信データ仕様
+LeapMotionから取得できるデータを整理して json 形式に変換して UDP で送信している
+```
+{
+    cmd: 'hand',
+    hand: {
+        id: number,
+        type: string, // 'left' or 'right'
+        palmPosition: [x,y,z], // 手のひら 座標
+        grabStrength: [0.0 - 1.0], // 手のひらの開き具合
+        fingers: {
+            thumb: [x,y,z],  // 親指 座標
+            index: [x,y,z],  // 人差し指
+            middle: [x,y,z], // 中指
+            ring: [x,y,z],   // 薬指
+            pinky: [x,y,z]   // 小指
+        },
+        roll: number,  // ロール角度
+        pitch: number, // ピッチ
+        yaw: number,   //　ヨー
+    }
+}
+```
 
 # 参考
 [Leap Motion と JavaScript でハンドパワー駆動のウェブページ](https://www.ei.tohoku.ac.jp/xkozima/lab/leapTutorial1.html)
