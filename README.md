@@ -1,5 +1,7 @@
 # Leap Motion UDP Sender
-LeapMotion の コマンドを UDP で送信するアプリ
+LeapMotion の コマンドを UDP で送信するアプリ  
+LeapMotion 未対応の Android 端末で利用する場合等で利用することができる。 
+受信側 は Unityパッケージ [Leap Motion UDP Receiver]([xxxxx](https://github.com/LeapMotion-UDP-Unity/Leap-Motion-UDP-Receiver-Unity)) に記載。
 
 # 環境
 LeapMotion と node.js 環境があれば動作する。
